@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+     <span class="texto03">Checkout </span>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item *ngFor="let item Of cart.items">
+
+    <h2> <ion-icon color="secondary" name="checkbox"></ion-icon> {{item.nome}}</h2>
+    <p item-end class="texto01">{{item.valor | currency: 'BRL'}}</p>
+    
+  </ion-item>
+  
+  <ion-item>
+    
+    <p item-end class="texto02">Total: {{total | currency: 'BRL'}} </p>
+  
+  </ion-item>
+  <button ion-button color="primary" block (click)="finalizar()">Finalizar Pedidos</button>
+
+</ion-content>
